@@ -1,0 +1,13 @@
+D:\C# work\Spaceman\obj\Debug\netcoreapp2.2\Spaceman.csproj.AssemblyReference.cache
+D:\C# work\Spaceman\obj\Debug\netcoreapp2.2\Spaceman.GeneratedMSBuildEditorConfig.editorconfig
+D:\C# work\Spaceman\obj\Debug\netcoreapp2.2\Spaceman.AssemblyInfoInputs.cache
+D:\C# work\Spaceman\obj\Debug\netcoreapp2.2\Spaceman.AssemblyInfo.cs
+D:\C# work\Spaceman\obj\Debug\netcoreapp2.2\Spaceman.csproj.CoreCompileInputs.cache
+D:\C# work\Spaceman\bin\Debug\netcoreapp2.2\Spaceman.deps.json
+D:\C# work\Spaceman\bin\Debug\netcoreapp2.2\Spaceman.runtimeconfig.json
+D:\C# work\Spaceman\bin\Debug\netcoreapp2.2\Spaceman.runtimeconfig.dev.json
+D:\C# work\Spaceman\bin\Debug\netcoreapp2.2\Spaceman.dll
+D:\C# work\Spaceman\bin\Debug\netcoreapp2.2\Spaceman.pdb
+D:\C# work\Spaceman\obj\Debug\netcoreapp2.2\Spaceman.dll
+D:\C# work\Spaceman\obj\Debug\netcoreapp2.2\Spaceman.pdb
+D:\C# work\Spaceman\obj\Debug\netcoreapp2.2\Spaceman.genruntimeconfig.cache

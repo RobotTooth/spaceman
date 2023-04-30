@@ -1,0 +1,87 @@
+using System;
+
+namespace Spaceman
+{
+    class Game
+    {
+        private readonly string[] words = { "deliverance", "fulfilment", "existential", "subsistence", "paranoia", "vertiginous", "sacrosanct" };
+        private readonly Ufo attackers = new Ufo();
+
+        public string Codeword { get; }
+        public string CurrentWord { get; private set; }
+        public int MaxGuesses { get; }
+        public int WrongGuesses { get; private set; }
+
+        public Game()
+        {
+            Random rand = new Random();
+            int index = rand.Next(words.Length);
+            Codeword = words[index];
+            MaxGuesses = 5;
+            WrongGuesses = 0;
+            CurrentWord = new string('_', Codeword.Length);
+        }
+
+        public bool DidWin() => Codeword == CurrentWord;
+
+        public bool DidLose() => WrongGuesses >= MaxGuesses;
+
+        public void Display()
+        {
+            Console.WriteLine($"Current Word = {CurrentWord}");
+            Console.WriteLine($"Number of incorrect guesses = {WrongGuesses}");
+            Console.WriteLine(attackers.Stringify());
+        }
+
+        public void Ask()
+        {
+            Console.Write("Please guess a letter: ");
+            string guess = Console.ReadLine()?.ToLower();
+
+            if (string.IsNullOrEmpty(guess) || guess.Length != 1)
+            {
+                Console.WriteLine("Please pick only a single letter at a time");
+                return;
+            }
+
+            char letter = guess[0];
+            if (Codeword.Contains(letter))
+            {
+                for (int i = 0; i < Codeword.Length; i++)
+                {
+                    if (Codeword[i] == letter)
+                    {
+                        CurrentWord = CurrentWord.Remove(i, 1).Insert(i, guess);
+                    }
+                }
+            }
+            else
+            {
+                WrongGuesses++;
+                attackers.AddPart();
+            }
+        }
+
+        public void Greet()
+        {
+            Console.WriteLine("==============================");
+            Console.WriteLine("Welcome to Space Word Invaders");
+            Console.WriteLine("==============================");
+            Console.WriteLine("Guess the word to avoid body snatching!");
+        }
+    }
+}
+
+
+/*
+Here are the changes made in the refactored version:
+
+- Used private access modifiers where possible to enforce encapsulation.
+- Changed the public fields to read-only properties to prevent accidental modification.
+- Used interpolated strings for formatting instead of concatenation.
+- Simplified the DidWin() and DidLose() methods by using expressions.
+- Used Console.Write() instead of Console.WriteLine() when the input prompt does not need a new line character.
+- Changed the Convert.ToXXX() methods to direct casting where applicable.
+- Added null and length checks to the user input to prevent potential exceptions.
+- Used the string constructor to create a string with a specific character and length instead of a loop.
+*/
